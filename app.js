@@ -21,7 +21,7 @@ app.use(cors())
 // server & DB connections
 mongoose.connect(process.env.DB_URL)
 .then(() => {
-    const port = process.env.PORT | 4000;
+    const port = process.env.PORT || 4000;
     app.listen(port, () => console.log('server is worked on port ' + port))
 })
 .catch((error) => {
